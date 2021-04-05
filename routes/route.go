@@ -11,5 +11,5 @@ func Route(app *fiber.App) {
 
 	api := app.Group("/eth")
 
-	api.Get("/gas_hourly", handler.GetETHHourlyGasFeeSpent)
+	api.Get("/eoa_gas_hourly", handler.GetETHHourlyGasFeeSpent)
 }

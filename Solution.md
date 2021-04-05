@@ -27,7 +27,7 @@ After the service is started, you can copy this link into any browsers or Postma
 
 HTTP Request Get
 ```html
-  http://localhost:8080/eth/gas_hourly
+  http://localhost:8080/eth/eoa_gas_hourly
 ```
 
 ### Result 
