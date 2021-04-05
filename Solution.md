@@ -1,12 +1,10 @@
 # Glassnode Challenge
-___
 * Provide an API to get how much fees in the Ethereum network have been spent by plain ETH transfers between **EOA**.
 * Use golang to build a restful api server to access data from PostgreSQL. 
 * The service need to be started with the provided `docker-compose.yaml`.
 
 
 ## Solution
-___
 ### Requirements
 [Docker engine](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are needed for this service.
 
@@ -83,7 +81,6 @@ For this challenge, I am looking for all the plain ETH tranfer between **EOA** o
 3. For any ether transfers from **EOA** to contract address, it will be recorded into the block transaction. And any ether transfer from contract address to **EOA**/contract address, the record will be stored in the `message call`. Contract address will only exist in the `to` in the transactions. The condition should be `not exists (select 1 from public.contracts c WHERE t.to = c.address)`
 
 ## Approaches and Tradeoffs
-___
 
 ### Technical choices
 * GoLang 1.14
