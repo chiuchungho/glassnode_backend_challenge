@@ -1,6 +1,7 @@
 version: "3"
 services:
   database:
+    container_name: postgres
     image: glassnode/code-challenge-2020-database:latest
     environment:
       POSTGRES_DB: eth
@@ -8,3 +9,26 @@ services:
       POSTGRES_PASSWORD: test
     ports:
       - "5432:5432"
+    networks: 
+      - glassnode_network
+
+  backend:
+    image: chiuchungho/glassnode_challenge_backend:latest
+    environment:
+      POSTGRES_DB: eth
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      LOG_LEVEL: info
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    networks: 
+      - glassnode_network
+
+networks: 
+  glassnode_network:
+    driver: bridge
+
